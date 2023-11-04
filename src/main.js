@@ -3,7 +3,7 @@
 // https://www.ruanyifeng.com/blog/2018/07/web-worker.html
 
 const loader = document.getElementById('loader');
-const worker = new Worker('./../dist/worker.js');
+const worker = new Worker('dist/worker.js');
 
 worker.addEventListener('error', e => {
   console.error(e.message);
