@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Web Worker 調用 API，減輕主執行緒負擔 - August - Let's Write</title>
+    <link rel="canonical" href="https://www.letswrite.tw/web-worker/"/>
+    <meta property="og:url" content="https://letswritetw.github.io/letswrite-web-worker/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Let's Write"/>
+    <meta property="og:title" content="Web Worker 調用 API，減輕主執行緒負擔 - Augustus - Let's Write"/>
+    <meta itemprop="name" content="Web Worker 調用 API，減輕主執行緒負擔 - Augustus - Let's Write"/>
+    <meta name="description" content="Web Worker 調用 API，減輕主執行緒負擔"/>
+    <meta property="og:description" content="Web Worker 調用 API，減輕主執行緒負擔"/>
+    <meta itemprop="description" content="Web Worker 調用 API，減輕主執行緒負擔"/>
+    <meta itemprop="image" content="https://letswritetw.github.io/letswrite-web-worker/fb.png"/>
+    <meta property="og:image" content="https://letswritetw.github.io/letswrite-web-worker/fb.png"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="Web Worker 調用 API，減輕主執行緒負擔"/>
+    <link rel="shortcut icon" href="https://letswritetw.github.io/letswritetw/dist/img/logo_512.png?ckcachebust=720758360"/>
+    <script src="https://cdn.tailwindcss.com?ckcachebust=9F89B49E6E4B81EB9A3EF6A5D8924461"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              main: '#42A6F7',
+              mainHover: '#167FFF'
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="dist/style.min.css?ckcachebust=DAEEE33AE1AAE2897630A757AD488BDC"/>
+    <!-- Google Tag Manager-->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PGQ9WQT');
+    </script>
+  </head>
+  <body class="bg-neutral-800 text-white">
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGQ9WQT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <div class="container mx-auto p-8" id="app">
+      <div class="fixed z-50 flex items-center justify-center bg-neutral-800 bg-opacity-70 inset-0 hidden" id="loader">
+        <div class="loader"></div>
+      </div>
+      <div class="text-center">
+        <h1 class="mb-4 font-bold text-4xl">Web Worker 調用 API，減輕主執行緒負擔</h1>
+        <p>筆記文：<a class="text-main hover:text-mainHover" href="https://www.letswrite.tw/web-worker/">Let's Write</a></p>
+      </div>
+      <hr class="my-8 mx-auto max-w-3xl border-t border-gray-500 border-dashed"/>
+      <div class="max-w-3xl mx-auto gap-8 sm:grid grid-cols-2">
+        <div class="mb-12 sm:mb-0">
+          <div class="mb-8">
+            <label class="block mb-2" for="title">Title</label>
+            <input class="p-2 w-full rounded-md text-neutral-800" id="title" type="text" placeholder="請輸入標題"/>
+          </div>
+          <div class="mb-8">
+            <label class="block mb-2" for="content">Content</label>
+            <input class="p-2 w-full rounded-md text-neutral-800" id="content" type="text" placeholder="請輸入內文"/>
+          </div>
+          <div class="text-center">
+            <button class="inline-flex px-4 py-2 bg-main rounded-md hover:bg-mainHover" id="send" type="button">調用 API</button>
+          </div>
+        </div>
+        <textarea class="p-4 w-full rounded-md text-neutral-800" id="result" cols="30" rows="10"></textarea>
+      </div>
+      <hr class="my-8 mx-auto max-w-3xl border-t border-gray-500 border-dashed"/>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js?ckcachebust=720758360"></script>
+    <script src="dist/main.min.js?ckcachebust=1D5EBBF4A8DFB0D281F1882A271ECC59"></script>
+  </body>
+</html>
