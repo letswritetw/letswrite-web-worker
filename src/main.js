@@ -1,7 +1,3 @@
-// https://developer.mozilla.org/zh-TW/docs/Web/API/Web_Workers_API/Using_web_workers#web_workers_api
-// https://www.w3schools.com/html/html5_webworkers.asp
-// https://www.ruanyifeng.com/blog/2018/07/web-worker.html
-
 const loader = document.getElementById('loader');
 const worker = new Worker('dist/worker.js');
 
@@ -10,10 +6,10 @@ worker.addEventListener('error', e => {
   loader.classList.add('hidden');
 });
 
-worker.addEventListener('message', e => {
+worker.onmessage = e => {
   document.getElementById('result').value = DOMPurify.sanitize(JSON.stringify(e.data, null, 2));
   loader.classList.add('hidden');
-});
+}
 
 const btn = document.getElementById('send');
 
