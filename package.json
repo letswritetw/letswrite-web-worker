@@ -2,7 +2,7 @@
   "name": "letswrite-web-worker",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/letswritetw/letswrite-web-worker.git",
+  "repository": "https://github.com/letswritetw/letswrite-web-workers.git",
   "author": "Let's Write <letswritetw@gmail.com>",
   "license": "MIT"
 }
